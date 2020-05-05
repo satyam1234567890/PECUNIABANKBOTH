@@ -1,0 +1,147 @@
+#para1
+{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    opacity: 0.8;
+    margin-left: 400px;
+    margin-top: 10px;
+   
+}
+
+.col-md-20.mx-auto.mt-4
+{
+    margin-top: 0px;
+    width: 1000px; 
+    margin-left: 70px; 
+}
+
+.alert.alert-dark
+{
+    height: 0.1px;
+    color: red;
+    margin-left: 130px;
+}
+
+
+.alert.alert-danger
+{
+    color: red;
+    text-align: center;
+    width: 450px;
+    border-color: gray;
+    height: 20px;
+    background-color: white;
+    border: black;
+    margin-left: 290px;
+}
+
+
+.mt-3
+{ 
+    margin-left: 130px;
+    margin-bottom: 5px;
+    margin-top: 20px;
+}
+
+.hr
+{
+  border: 0.2px solid lightgrey;
+  margin-top: 40px;
+}
+
+.container
+{
+    width: 1200px;
+    margin-top: 50px;
+    height: 400px;
+    margin-left: 100px;
+    box-shadow: 0px 4px 4px 0px rgba(143, 107, 107, 0.2); 
+}
+
+.form-control
+{
+    width: 750px;
+    margin-left:130px;
+    background:none;
+}
+
+.btn.btn-success
+{
+    width: 200px;
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: medium;
+    background-color: grey;
+    border-color:gray;
+    
+}
+
+.btn.btn-success:hover
+{
+    background-color:gray;
+    opacity: 0.7;
+    color: white;
+}
+
+
+
+.div.div-card
+{
+    margin-top: 50px;
+    width: 1200px;
+    margin-left:60px;
+    height: 300px;
+}
+
+.card-body
+{
+    width: 1200px;
+    height: 300px;;
+    background-color:white;
+    box-shadow: 4px 4px 4px 4px rgba(0,0.2,0.2,0.2);  
+}
+
+.card-header
+{  
+    width: 1200px;
+    font-weight: bold;
+    color:black;
+    font-size: 15px;
+    text-align: right;
+    height: 30px;
+    background-color:lightgrey;
+    opacity: 0.7;
+}
+
+.div1
+{
+    float: left;
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 500px;
+}
+.div2
+{
+    float:right;
+    width: 500px;
+    margin-top: 50px;   
+    margin-left: 30px;
+}
+
+.table.table-striped
+{
+    width: 1200px;
+    margin: 80px;
+}
+
+thead {
+    height: 100px;
+    width: 100px;
+}
+
+.display
+{
+    margin-left:25px;
+    width: 1200px;   
+}

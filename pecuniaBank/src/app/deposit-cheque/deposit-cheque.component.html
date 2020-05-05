@@ -1,0 +1,149 @@
+
+<div class="container" >
+   
+    <section class="col-md-20 mx-auto mt-4">
+  
+      <p id="para1">Cheque</p>
+    <div class="alert alert-danger" *ngIf="transactionErrorInfo!= undefined">{{transactionErrorInfo}}</div>
+      <form #frm="ngForm" (ngSubmit)= "submit1()"> 
+        <div class="form-row" style="display: inline-flex;">
+
+            <div class="col">
+                <div class="mt-3"><b>Enter Issue Date:</b></div>
+                <div>
+                  <input type="date" name="IssueDate" 
+                   placeholder="Issue Date *"
+                   style="width: 350px;"
+                  [(ngModel)]="cheque.issuedate" class="form-control" 
+                  #Issue="ngModel" required /> 
+                </div>
+                  <div class="alert alert-dark" *ngIf="Issue.invalid && (Issue.touched || Issue.dirty)">
+                  * Issue Date Must be filled.
+                  </div>
+                  </div>
+            <div class="col">
+        <div class="mt-3" style="margin-left: 50px;"><b>Enter Account Number:</b></div>
+        <div>
+          <input type="text" name="accountId" 
+           pattern=[0-9]{10} maxlength="10" 
+           style="width: 350px; margin-left: 50px;"
+           placeholder="Account Number *"
+          [(ngModel)]="cheque.accountNumber" class="form-control" 
+          #accountNumber="ngModel" required /> 
+        </div>
+          <div class="alert alert-dark" *ngIf="accountNumber.invalid && (accountNumber.touched || accountNumber.dirty)">
+          * Account Id must be of 10 digits only.
+          </div>
+          </div>
+        </div>
+  
+        <div class="form-row" style="display: inline-flex;">
+        <div class="col">
+        <div class="mt-3"><b>Enter Pay Name:</b></div>
+        <div>
+          <input style="width: 350px;" placeholder="Pay Name *" type="text" name="PayName" pattern="[a-zA-z ]+" [(ngModel)]="cheque.pay" class="form-control" 
+          #Pay="ngModel" required /> 
+        </div>
+          <div class="alert alert-dark" *ngIf="Pay.invalid && (Pay.touched || Pay.dirty)">
+          * Pay Name Must we Filled.
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="mt-3" style="margin-left: 50px;"><b>Withdrawal Amount :</b></div>
+        <div>
+          <input  style="width: 350px; margin-left: 50px;" placeholder="Amount *" type="text" name="endingDate1" [(ngModel)]="cheque.amount" class="form-control" 
+  
+          #amount="ngModel" required/> 
+        </div>
+          <div class="alert alert-dark" style="margin-left: 50px;" *ngIf="amount.invalid && (amount.touched || amount.dirty)">
+          * Amount must be filled.
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-row" style="display: inline-flex;">
+        <div class="col">
+        <div class="mt-3"><b>Enter Cheque Number:</b></div>
+        <div>
+          <input style="width: 350px;" placeholder="Cheque Number *" type="text" name="chequeNumber"pattern=[0-9]{6} maxlength="6"  [(ngModel)]="cheque.chequeNumber" class="form-control" 
+          #Numer="ngModel" required /> 
+        </div>
+          <div class="alert alert-dark" *ngIf="Numer.invalid && (Numer.touched || Numer.dirty)">
+          * Cheque Number Must we Filled.
+          </div>
+        </div>
+  
+        <div class="col">
+          <div class="mt-3" style="margin-left: 50px;"><b>Enter IFSC :</b></div>
+        <div>
+          <input  style="width: 350px; margin-left: 50px;" placeholder="IFSC *" type="text" name="IFSC" pattern=[A-Z0-9]{10} maxlength="10"[(ngModel)]="cheque.IFSC" class="form-control" 
+  
+          #ifsc="ngModel" required/> 
+        </div>
+          <div class="alert alert-dark" style="margin-left: 50px;" *ngIf="ifsc.invalid && (ifsc.touched || ifsc.dirty)">
+          * IFSC must be filled.
+          </div>
+        </div>
+      </div>
+
+      <div  >
+        <label  style="margin-left: 140px;"for="Type" >Bank Name:</label>
+           <select class="form-control"  id="transaction"
+                 required
+                 [(ngModel)]="cheque.bankName" name="type">
+             <option *ngFor="let type of transactionType" [value]="type">{{type}}</option>
+          </select>
+      </div>
+
+      <p id="para1">Deposit  Slip</p>
+     
+      <div class="mt-3"><b>Enter Account Number:</b></div>
+      <div>
+        <input type="text" name="account" 
+         pattern=[0-9]{10} maxlength="10" 
+         placeholder="Account Number *"
+        [(ngModel)]="depositSlip.accountNumber" class="form-control" 
+        #account="ngModel" required /> 
+      </div>
+        <div class="alert alert-dark" *ngIf="account.invalid && (account.touched || account.dirty)">
+        * Account Id must be of 10 digits only.
+        </div>
+
+      <div class="form-row" style="display: inline-flex;">
+      <div class="col">
+      <div class="mt-3"><b>Enter Account Holder Name:</b></div>
+      <div>
+        <input style="width: 350px;" placeholder="Account Holder Name *" type="text" name="accountHolderName" pattern="[a-zA-z ]+" [(ngModel)]="depositSlip.accountHolderName" class="form-control" 
+        #holderName="ngModel" required /> 
+      </div>
+        <div class="alert alert-dark" *ngIf="holderName.invalid && (holderName.touched || holderName.dirty)">
+        * Holder Name Must we Filled.
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="mt-3" style="margin-left: 50px;"><b> Amount :</b></div>
+      <div>
+        <input  style="width: 350px; margin-left: 50px;" placeholder="Amount *" type="text" name="amount" [(ngModel)]="depositSlip.amount" class="form-control" 
+
+        #amount1="ngModel" required/> 
+      </div>
+        <div class="alert alert-dark" style="margin-left: 50px;" *ngIf="amount1.invalid && (amount1.touched || amount1.dirty)">
+        * Amount must be filled.
+        </div>
+      </div>
+    </div>
+        
+   
+          
+      <div class="form-row" style="display: inline-flex;">
+          <input type="submit" [disabled]="!frm.valid" class="btn btn-success" value="submit" style="margin-left: 280px;margin-right: 50px;"/>
+          <input type="reset" class="btn btn-success"  value="Reset"/>
+        </div>
+     
+        </form>
+    </section> 
+  </div> 
+  

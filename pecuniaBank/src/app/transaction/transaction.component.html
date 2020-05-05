@@ -1,0 +1,38 @@
+
+ <h4 style="text-align: center;">Today's Transaction Statment</h4>
+  <div class="div-table" >
+    <table style="border-radius: 2px; border-style: dotted;"  class="table table-striped">
+    <thead style="background-color:lightgray"> 
+      <tr>
+     <th  style="height: 40px; width: 100px;" >DATE</th>
+     <th >TRANS ID</th>
+     <th>ACCOUNT NUMBER</th>
+     <th>BENIFICARY NAME</th>
+     <th >BENIFICARY ACCOUNT NUMBER</th>
+     <th >BANK NAME</th>
+     <th> AMOUNT</th>
+     <th> OPTION</th>
+     <th>TYPE</th>
+     <th> STATUS</th>
+     <th>CURRENT BALANCE</th>
+    </tr>
+    </thead>
+    
+     <tbody>
+       <tr *ngFor="let transaction of transactions">        
+         <td>{{transaction.transactionDate}}</td>
+         <td>{{transaction.transactionId}}</td>
+         <td>{{transaction.accountNumber}}</td>
+         <td>{{transaction.benificaryName}}</td>
+         <td>{{transaction.benificaryAccoountNumber}}</td>
+         <td>{{transaction.bankName}}</td>
+         <td>{{transaction.transactionAmount}}</td>
+         <td>{{transaction.transactionOption}}</td>
+         <td>{{transaction.transactionType}}</td>
+         <td>{{transaction.transactionStatus}}</td>
+         <td>{{transaction.current_Balance}}</td>
+        
+     </tbody>  
+   </table> 
+  </div>
+-->
