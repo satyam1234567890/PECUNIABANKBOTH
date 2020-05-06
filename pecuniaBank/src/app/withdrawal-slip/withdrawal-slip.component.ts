@@ -21,8 +21,9 @@ export class WithdrawalSlipComponent implements OnInit {
   {
     console.log(withdrawalSlip);
     this.transactionService.loadWithdrawalSlip(withdrawalSlip).subscribe(data=>{this.transaction=data,
-      this.transactionErrorInfo=undefined;},
-      error=>{this.transactionErrorInfo==error.error;
+      this.transactionErrorInfo=undefined;
+    alert(this.transaction)},
+      error=>{this.transactionErrorInfo=error;
       });
      console.log(this.transaction);
     

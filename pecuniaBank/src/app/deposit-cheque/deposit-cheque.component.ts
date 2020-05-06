@@ -11,7 +11,7 @@ export class DepositChequeComponent implements OnInit {
   transactionType=["PECUNIA","HDFC","ICIC","SBI"];
 cheque :Cheque=new Cheque();
 depositSlip:DepositSlip=new DepositSlip();
-transaction:Transaction;
+transaction:String;
 data1:Data1=new Data1();
   transactionErrorInfo: any;
   constructor(private transactionService:TransactionService) { }
@@ -23,9 +23,12 @@ data1:Data1=new Data1();
     this.data1.depositSlip=this.depositSlip;
    
     console.log(this.cheque+" "+this.depositSlip);
+    
     this.transactionService.loadDepositCheque(this.data1).subscribe(data=>{this.transaction=data,
-      this.transactionErrorInfo=undefined;},
-      error=>{this.transactionErrorInfo==error.error;
+      this.transactionErrorInfo=undefined;
+      alert(this.transaction);
+    },
+      error=>{this.transactionErrorInfo=error.error;
       });
     console.log(this.transaction);
 

@@ -10,7 +10,7 @@ import { TransactionService } from '../transaction.service';
 export class WithdrawalChequeComponent implements OnInit {
 
   cheque:Cheque=new Cheque();
-  transcation: Transaction;
+  transcation: String;
   transactionErrorInfo: any;
 
   constructor(private transactionService:TransactionService) { }
@@ -24,8 +24,9 @@ export class WithdrawalChequeComponent implements OnInit {
    console.log(cheque);
   cheque.bankName="PECUNIA";
    this.transactionService.loadWithdrawalCheque(cheque).subscribe(data=>{this.transcation=data,
-    this.transactionErrorInfo=undefined;},
-    error=>{this.transactionErrorInfo==error.error;
+    this.transactionErrorInfo=undefined;
+  alert(this.transcation)},
+    error=>{this.transactionErrorInfo=error;
     });
    console.log(this.transcation);
    

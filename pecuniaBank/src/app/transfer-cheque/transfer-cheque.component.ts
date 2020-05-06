@@ -11,7 +11,7 @@ export class TransferChequeComponent implements OnInit {
   transactionType=["PECUNIA","HDFC","ICIC","SBI"];
    cheque:Cheque=new Cheque();
   transferSlip:TransferSlip=new TransferSlip();
-  transaction: Transaction;
+  transaction: String;
   data:Data=new Data();
   transactionErrorInfo:any;
     constructor(private transactionService:TransactionService) { }
@@ -27,8 +27,9 @@ export class TransferChequeComponent implements OnInit {
     this.data.transferSlip=this.transferSlip;
     console.log(this.cheque+""+this.transferSlip);
     this.transactionService.loadTransferCheque(this.data).subscribe(data=>{this.transaction=data
-      this.transactionErrorInfo=undefined;},
-      error=>{this.transactionErrorInfo==error.error;
+      this.transactionErrorInfo=undefined;
+    alert(this.transaction);},
+      error=>{this.transactionErrorInfo=error;
       })
     console.log(this.transaction);
     
